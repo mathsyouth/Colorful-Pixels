@@ -107,5 +107,5 @@ Vector2 Viewport::GetPositionOffset() {
 }
 
 bool Viewport::IsCursorInViewport() {
-    return CheckCollisionPointRec(GetMousePosition(), (Rectangle) { m_Position.x, m_Position.y, m_Size.x, m_Size.y } );
+    return CheckCollisionPointRec(GetMousePosition(), Rectangle{ m_Position.x, m_Position.y, m_Size.x, m_Size.y } );
 }

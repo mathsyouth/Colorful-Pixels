@@ -140,7 +140,7 @@ void ColorfulPixels::IntroGuiPanel(const char* name, bool& draw) {
             &m_IntroPanelImage, 
             m_IntroPanelImage.width / 2.0f, 
             m_IntroPanelImage.height / 2.0f, 
-            (Rectangle) {
+            Rectangle{
                 0.0f,
                 0.0f,
                 static_cast<float>(m_IntroPanelImage.width),

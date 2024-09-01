@@ -18,7 +18,7 @@ Canvas::Canvas(const int CELL_COUNT_X, const int CELL_COUNT_Y, const LayerSystem
     CELL_COUNT_Y(CELL_COUNT_Y),
     scale(1.0f),
     m_ReloadLayerTexture(false) {
-        Image canvasBackgroundImage = GenImageChecked(SIZE.x, SIZE.y, 128, 128, (Color) { 128, 128, 128, 255 }, (Color) { 192, 192, 192, 255 });
+        Image canvasBackgroundImage = GenImageChecked(SIZE.x, SIZE.y, 128, 128, Color{ 128, 128, 128, 255 }, Color{ 192, 192, 192, 255 });
         m_CanvasBackground = LoadTextureFromImage(canvasBackgroundImage);
         UnloadImage(canvasBackgroundImage);
 
@@ -109,13 +109,13 @@ bool Canvas::CanvasIndexValid(Vector2 index) {
 void Canvas::DrawBackground() {
     DrawTexturePro(
         m_CanvasBackground,
-        (Rectangle) { 
+        Rectangle{ 
             0.0f, 
             0.0f, 
             static_cast<float>(m_CanvasBackground.width), 
             static_cast<float>(m_CanvasBackground.height) 
         },
-        (Rectangle) { 
+        Rectangle{ 
             0.0f, 
             0.0f, 
             SIZE.x * scale, 
@@ -134,13 +134,13 @@ void Canvas::DrawLayer(bool visible, Layer& layer) {
 
     DrawTexturePro(
         layer.GetTexture(),
-        (Rectangle) { 
+        Rectangle{ 
             0.0f, 
             0.0f, 
             static_cast<float>(CELL_COUNT_X), 
             static_cast<float>(CELL_COUNT_Y) 
         },
-        (Rectangle) { 
+        Rectangle{ 
             0.0f, 
             0.0f, 
             SIZE.x * scale, 
@@ -164,7 +164,7 @@ void Canvas::DrawCell(float x, float y, Color color) {
 
 void Canvas::DrawCellLines(float x, float y, float thickness, Color color) {
     DrawRectangleLinesEx(
-        (Rectangle) { 
+        Rectangle{ 
             x,
             y,
             GetCellSize().x,
@@ -214,7 +214,7 @@ void Canvas::DrawCanvasCursor(Camera2D& camera, Vector2 viewportPosition, ColorS
 
 void Canvas::DrawCanvasFrame() {
     DrawRectangleLinesEx(
-        (Rectangle) {
+        Rectangle{
             0.0f,
             0.0f,
             SIZE.x * scale,

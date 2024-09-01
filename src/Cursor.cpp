@@ -3,7 +3,7 @@
 #include "raylib.h"
 
 Cursor::Cursor() :
-    m_PreviousFramePosition((Vector2) { 0.0f, 0.0f } ) { }
+    m_PreviousFramePosition(Vector2{ 0.0f, 0.0f } ) { }
 
 Vector2 Cursor::GetMousePositionWorld2D(Camera2D& camera) {
     return GetScreenToWorld2D(GetMousePosition(), camera);

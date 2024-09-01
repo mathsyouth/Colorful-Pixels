@@ -33,6 +33,7 @@ Software supports all range of useful features, designed to make your life easy 
 ```console
 $ git clone https://github.com/itsYakub/Colorful-Pixels.git --depth=1 --branch=alpha1.0
 $ cd Colorful-Pixels
+$ git submodule update --init --recursive
 ```
 - Create a binary folder:
 ```console
